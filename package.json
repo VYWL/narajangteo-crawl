@@ -1,0 +1,36 @@
+{
+  "name": "alba",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "pkg ."
+  },
+  "pkg": {
+    "scripts": "./index.js",
+    "assets": [
+      "./node_modules/*",
+      "./utils/*.js"
+    ],
+    "targets" : [
+      "node10-win-x64"
+    ]
+  },
+  "bin": "./index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.10",
+    "fs": "0.0.1-security",
+    "iconv-lite": "^0.6.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.5",
+    "pkg": "^5.2.1"
+  }
+}
