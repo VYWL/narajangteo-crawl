@@ -1,9 +1,8 @@
-const iconv = require('iconv-lite');
+const iconv = require("iconv-lite");
 
 function getParams(searchString, fromDate, toDate, pageNum) {
-
   const tempString = iconv.encode(searchString, "euc-kr");
-  const encodedString = escape(tempString.toString('binary'));
+  const encodedString = escape(tempString.toString("binary"));
 
   const obj = {
     area: "",
@@ -33,18 +32,18 @@ function getParams(searchString, fromDate, toDate, pageNum) {
     toOpenBidDt: "",
     currentPageNo: pageNum,
     maxPageViewNoByWshan: 500, // fix!!
-  }
+  };
 
   const queryString = getQueryString(obj);
 
   return queryString;
 }
 
-module.exports = { getParams }
+module.exports = { getParams };
 
-const getQueryString = (obj) => {
+const getQueryString = obj => {
   const entries = Object.entries(obj);
-  const url = entries.reduce((queryString, item)=> queryString + `${item[0]}=${item[1]}&`,"?");
+  const url = entries.reduce((queryString, item) => queryString + `${item[0]}=${item[1]}&`, "?");
 
   return url;
-}
+};
